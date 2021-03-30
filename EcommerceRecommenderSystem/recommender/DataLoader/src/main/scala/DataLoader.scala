@@ -1,4 +1,4 @@
-import com.mongodb.MongoClientURI
+
 import com.mongodb.casbah.Imports.MongoClientURI
 import com.mongodb.casbah.MongoClient
 import com.mongodb.casbah.commons.MongoDBObject
@@ -27,8 +27,8 @@ case class MongoConfig(uri:String, db:String)
 
 object DataLoader {
 
-  val PRODUCT_DATA_PATH="E:\\EcommerceRecommenderSystem\\recommender\\DataLoader\\src\\main\\resources\\products.csv"
-  val RATING_DATA_PATH="E:\\EcommerceRecommenderSystem\\recommender\\DataLoader\\src\\main\\resources\\ratings.csv"
+  val PRODUCT_DATA_PATH="E:\\EcommerceRecommendationSystem\\EcommerceRecommenderSystem\\recommender\\DataLoader\\src\\main\\resources\\products.csv"
+  val RATING_DATA_PATH="E:\\EcommerceRecommendationSystem\\EcommerceRecommenderSystem\\recommender\\DataLoader\\src\\main\\resources\\ratings.csv"
 
   val MONGODB_PRODUCT_COLLECTION="Product"
   val MONGODB_RATING_COLLECTION="Rating"

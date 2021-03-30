@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="DataLoader" />
+        <module name="StatisticsRecommender" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="DataLoader" target="1.8" />
       <module name="EcommerceRecommenderSystem" target="1.8" />
       <module name="recommender" target="1.8" />
+      <module name="StatisticsRecommender" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
