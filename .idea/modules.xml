@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/EcommerceRecommenderSystem/recommender/DataLoader/DataLoader.iml" filepath="$PROJECT_DIR$/EcommerceRecommenderSystem/recommender/DataLoader/DataLoader.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/EcommerceRecommendationSystem.iml" filepath="$PROJECT_DIR$/.idea/EcommerceRecommendationSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EcommerceRecommenderSystem/EcommerceRecommenderSystem.iml" filepath="$PROJECT_DIR$/EcommerceRecommenderSystem/EcommerceRecommenderSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EcommerceRecommenderSystem/recommender/recommender.iml" filepath="$PROJECT_DIR$/EcommerceRecommenderSystem/recommender/recommender.iml" />
     </modules>
   </component>
 </project>
