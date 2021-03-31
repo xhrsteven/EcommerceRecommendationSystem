@@ -90,7 +90,6 @@ object DataLoader {
 
     // 在对DataFrame和Dataset进行操作许多操作都需要这个包进行支持
     import spark.implicits._
-
     // 将Product、Rating数据集加载进来
     val productRDD = spark.sparkContext.textFile(PRODUCT_DATA_PATH)
 

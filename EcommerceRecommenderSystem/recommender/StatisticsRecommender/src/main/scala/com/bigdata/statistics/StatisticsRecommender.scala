@@ -53,14 +53,16 @@ object StatisticsRecommender {
       .toDF()
 
 
-     //创建一张名叫ratings的表
+
+    //创建一张名叫ratings的表
     ratingDF.createOrReplaceTempView("ratings")
 
     //TODO: 不同的统计推荐结果
 
     //统计所有历史数据中每个商品的评分数
     //数据结构 -》  productId,count
-    val rateMoreProductsDF = spark.sql("select productId, count(productId) as count from ratings group by productId")
+    val rateMoreProductsDF = spark.sql("select productId, count(productId) as count " +
+      "from ratings group by productId")
 
     rateMoreProductsDF.write
       .option("uri",mongoConfig.uri)
@@ -78,15 +80,15 @@ object StatisticsRecommender {
     spark.udf.register("changeDate",(x:Int) => simpleDateFormat.format(new Date(x * 1000L)).toInt)
 
     // 将原来的Rating数据集中的时间转换成年月的格式
-    val ratingOfYearMonth = spark.sql("select productId, score, changeDate(timestamp) as yearmonth from rating")
+    val ratingOfYearMonth = spark.sql("select productId, score, changeDate(timestamp) as yearmonth from ratings")
 
     // 将新的数据集注册成为一张表
     ratingOfYearMonth.createOrReplaceTempView("ratingOfMonth")
-
+//
     val rateMoreRecentlyProducts = spark.sql("select productId, count(productId) as count, yearmonth" +
-      "from ratingOfMonth" +
-      "group by productId, yearmonth" +
-      "order by yearmonth desc , count desc ")
+      " from ratingOfMonth " +
+      " group by productId, yearmonth " +
+      " order by yearmonth desc , count desc ")
 
     rateMoreRecentlyProducts.write
       .option("uri",mongoConfig.uri)
